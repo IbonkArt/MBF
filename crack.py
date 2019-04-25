@@ -127,7 +127,6 @@ def crack0(data,sandi):
 	cetak('\r!h[*] Cracking  !k100!m%      ')
 	tampilhasil(akun,sandi,data)
 def install_browser():
-	def install_browser():
 	global br
 	br = mechanize.Browser()
 	br.set_handle_robots(False)
