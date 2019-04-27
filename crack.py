@@ -11,7 +11,7 @@ def cetak(x,e=0):
 	else:
 		sys.stdout.write(x+'\n')
 if platform.python_version().split('.')[0] != '2':
-	cetak('!m[!] Kamu menggunakan python versi %s silahkan menggunakan versi 2'%v().split(' ')[0])
+	cetak('!m[!] Kamu menggunakan python versi %s silahkan menggunakan versi 2+'%v().split(' ')[0])
 	sys.exit()
 import cookielib,re,urllib2,urllib,threading
 try:
@@ -277,7 +277,7 @@ def saring_id_teman(r):
 		id_bteman.append(i)
 def idteman():
 	if log != 1:
-		cetak('!h[*] Login !bFB !hdulu bos...')
+		cetak('!h[*] Login !bFacebook !hdahulu!...')
 		login()
 		if log == 0:
 			keluar()
@@ -315,7 +315,7 @@ def menu():
 	cetak("\e[1;34m   _  _    _____                   _                  _      \n\e[0m"
 	cetak("\e[1;34m _| || |_ |  ___|                 | |                | |     \n\e[0m"
 	cetak("\e[1;34m|_  __  _|| |_   __ _   ___   ___ | |__    __ _  ___ | |__   \n\e[0m"
-	cetak("\e[1;34  _| || |_ |  _| / _\` | / __| / _ \|  _ \  / _\` |/ __||  _ \  \n\e[0m"
+	cetak("\e[1;34m _| || |_ |  _| / _\` | / __| / _ \|  _ \  / _\` |/ __||  _\ \n\e[0m"
 	cetak("\e[1;77m|_  __  _|| |  | (_| || (__ |  __/| |_) || (_| |\__ \| | | | \n\e[0m"
 	cetak("\e[1;77m  |_||_|  \_|   \__,_| \___| \___||_.__/  \__,_||___/|_| |_| \n\e[0m"
 	cetak("\e[1;104m                    Facebook HACK by @Henrycko     \e[0m\n"
