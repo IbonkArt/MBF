@@ -253,7 +253,7 @@ def login():
 		cetak('!m[!] Login Gagal')
 def idgroup():
 	if log != 1:
-		cetak('!h[*] Login !bFB!h dulu bos...')
+		cetak('!h[*] Login !bFacebook!h dahulu!')
 		login()
 		if log == 0:
 			keluar()
@@ -266,7 +266,7 @@ def idgroup():
 			cetak('!m[!] Hanya Bisa Mengambil !h %d id'%len(id_bgroup))
 			break
 	simpan()
-	i = inputD('[?] Langsung Crack (y/t)',['Y','T'])
+	i = inputD('[?] Langsung Crack? (y/t)',['Y','T'])
 	if i.upper() == 'Y':
 		return crack(id_bgroup)
 	else:
@@ -291,18 +291,18 @@ def idteman():
 		k(url_regex='friends_center_main').url
 	except:
 		if len(id_teman) != 0:
-			cetak('!m[!] Hanya dapat mengambil !p%d id'%len(id_bteman))
+			cetak('!m[!] Hanya dapat mengambil !p%d ID'%len(id_bteman))
 		else:
 			cetak('!m[!] Batal')
 			keluar()
 	while 1:
 		saring_id_teman(buka(next))
-		cetak('\r!h[*] !p%s !hid terambil...'%len(id_bteman),1)
+		cetak('\r!h[*] !p%s !hID terambil...'%len(id_bteman),1)
 		sys.stdout.flush()
 		try:
 			next = br.find_link(url_regex='friends_center_main').url
 		except:
-			cetak('\n!m[!] Hanya dapat mengambil !p%d id'%len(id_bteman))
+			cetak('\n!m[!] Hanya dapat mengambil !p%d ID'%len(id_bteman))
 			break
 	simpan()
 	i = inputD('[?] Langsung Crack (y/t)',['Y','T'])
