@@ -83,7 +83,7 @@ def tampilhasil(akun,sandi,data):
 		return menu()
 def crack0(data,sandi):
 	akun = []
-	cetak('!h[*] Mengcrack !k%d Akun !hdengan sandi !m[!k%s!m]'%(len(data),sandi))
+	cetak('!h[*] Mengcrack !k%d akun !hdengan sandi !m[!k%s!m]'%(len(data),sandi))
 	cetak('!h[*] Cracking...  !k0!m%',1)
 	sys.stdout.flush()
 	jml0,jml1 = 0,0
@@ -175,7 +175,7 @@ def inputD(x,v=0):
 			if a.upper() in v:
 				break
 			else:
-				cetak('!m[!] Masukan Opsinya kak...')
+				cetak('!m[!] Masukan Opsinya kak!')
 				continue
 		else:
 			if len(a) == 0:
