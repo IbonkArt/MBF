@@ -322,9 +322,7 @@ def menu():
 	cetak("\e[1;41mHack Akun Melalui?...
 	cetak("\e[1;92m(\e[0m\e[1;77m1\e[0m\e[1;92m).\e[0m\e[1;91m Daftar Teman\e[0m
 	cetak("\e[1;92m(\e[0m\e[1;77m2\e[0m\e[1;92m).\e[0m\e[1;91m Anggota Grup\e[0m
-	cetak("\e[1;92m(\e[0m\e[1;77m3\e[0m\e[1;92m).\e[0m\e[1;91m Keluar!...\e[0m      
-	cetak("\n
-	
+	cetak("\e[1;92m(\e[0m\e[1;77m3\e[0m\e[1;92m).\e[0m\e[1;91m Keluar!...\e[0m
 	i = inputM('[?] PILIH',[1,2,3])
 	if i == 2:
 		lanjutG()
