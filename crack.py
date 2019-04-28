@@ -319,10 +319,10 @@ def menu():
 	cetak("\e[1;77m|_  __  _|| |  | (_| || (__ |  __/| |_) || (_| |\__ \| | | | \n\e[0m"
 	cetak("\e[1;77m  |_||_|  \_|   \__,_| \___| \___||_.__/  \__,_||___/|_| |_| \n\e[0m"
 	cetak("\e[1;104m                    Facebook HACK by @Henrycko     \e[0m\n"
-	cetak("\e[1;41mHACK AKUN MELALUI?...
-	cetak("\e[1;92m»\e[0m\e[1;77m1\e[0m\e[1;92m«\e[0m\e[1;91m DAFTAR TEMAN\e[0m
-	cetak("\e[1;92m»\e[0m\e[1;77m2\e[0m\e[1;92m«\e[0m\e[1;91m ANGGOTA GROUP\e[0m
-	cetak("\e[1;92m»\e[0m\e[1;77m3\e[0m\e[1;92m«\e[0m\e[1;91m KELUAR...\e[0m      
+	cetak("\e[1;41mHack Akun Melalui?...
+	cetak("\e[1;92m(\e[0m\e[1;77m1\e[0m\e[1;92m).\e[0m\e[1;91m Daftar Teman\e[0m
+	cetak("\e[1;92m(\e[0m\e[1;77m2\e[0m\e[1;92m).\e[0m\e[1;91m Anggota Grup\e[0m
+	cetak("\e[1;92m(\e[0m\e[1;77m3\e[0m\e[1;92m).\e[0m\e[1;91m Keluar!...\e[0m      
 	cetak("\n
 	
 	i = inputM('[?] PILIH',[1,2,3])
