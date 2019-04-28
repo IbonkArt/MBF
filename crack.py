@@ -312,24 +312,13 @@ def idteman():
 	else:
 		return menu()
 def menu():
-	cetak("\e[1;34m   _  _    _____                   _                  _      \n\e[0m"
-	cetak("\e[1;34m _| || |_ |  ___|                 | |                | |     \n\e[0m"
-	cetak("\e[1;34m|_  __  _|| |_   __ _   ___   ___ | |__    __ _  ___ | |__   \n\e[0m"
-	cetak("\e[1;34m _| || |_ |  _| / _\` | / __| / _ \|  _ \  / _\` |/ __||  _\ \n\e[0m"
-	cetak("\e[1;77m|_  __  _|| |  | (_| || (__ |  __/| |_) || (_| |\__ \| | | | \n\e[0m"
-	cetak("\e[1;77m  |_||_|  \_|   \__,_| \___| \___||_.__/  \__,_||___/|_| |_| \n\e[0m"
-	cetak("\e[1;104m                    Facebook HACK by @Henrycko \e[0m\n"
-	cetak("\e[1;41mHack Akun Melalui?...
-	cetak("\e[1;92m(\e[0m\e[1;77m1\e[0m\e[1;92m).\e[0m\e[1;91m Daftar Teman\e[0m
-	cetak("\e[1;92m(\e[0m\e[1;77m2\e[0m\e[1;92m).\e[0m\e[1;91m Anggota Grup\e[0m
-	cetak("\e[1;92m(\e[0m\e[1;77m3\e[0m\e[1;92m).\e[0m\e[1;91m Keluar!...\e[0m
-	i = inputM('[?] PILIH',[1,2,3])
+	cetak("\n           !h.-.-..\n          /+/++//\n         /+/++//\n  !k*   !k* !h/+/++//\n   \ /  |/__//\n !h{!mX!h}v{!mX!h}!0!b|!cMBF!b|==========.\n   !h(!m'!h)!0  !h/'|'\           !b\\\n       !h/  \  \          !b'\n       !h\_  \_ \_   !k___!mMBF !c3.0!k___\n\n !m* !bAuthors : @Henrycko\n !m* !cSupporters : Daiva\n !m* !phttps://www.facebook.com/henrycko.za\n !m* !phttps://www.facebook.com/deva.alzena\n !m* !phttps.github.com/Henrycko\n!k.======================.\n|!h  AMBIL !mID!h DARI.....  !k|\n'======================'\n!k#!p1 !hDAFTAR TEMAN\n!k#!p2 !hANGGOTA GROUP\n!k#!p3 !mKELUAR...")
+	elif i == 1:
+	        lanjutT()
+	        idteman()
 	if i == 2:
 		lanjutG()
 		idgroup()
-	elif i == 1:
-		lanjutT()
-		idteman()
 	elif i == 3:
 		keluar()
 bacaData()
